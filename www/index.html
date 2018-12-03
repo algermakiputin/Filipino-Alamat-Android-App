@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"/>
+      <meta name="format-detection" content="telephone=no">
+      <meta name="msapplication-tap-highlight" content="no">
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+      <script type="text/javascript" src="cordova.js"></script> 
+      <link rel="stylesheet" type="text/css" href="css/core.min.css">
+      <link rel="stylesheet" type="text/css" href="css/core-colors.min.css">
+      <link rel="stylesheet" type="text/css" href="css/core-icons.min.css">
+      <link rel="stylesheet" type="text/css" href="css/index.css">
+      <title>Mga Alamat - Filipino Stories</title>
+   </head>
+   <body>
+      <div id="loader"></div>
+      <div class="header main-header">
+         <div class="header-container" id="header-main-group" style="display: block"> <button class=" place-left tool-button" id="backButton"> <span class="i-back icon"></span> </button> <button class="nav-button" id="sbt1"><span></span></button> <span class="app-title">Filipino Alamat</span> <button onclick="window.plugins.socialsharing.share('Free Filipino Alamat Book in your Pocket Available at Google Playstore', 'Filipino Alamat', null, 'https://play.google.com/store/apps/details?id=filipino.alamat')" class="tool-button place-right bg-red-A400" id="searchButton"> <span class="i-share icon"></span> </button> </div>
+      </div>
+      <div class="right-shadow" id="sidebar" data-role="sidebar" data-toggle="#sbt1">
+         <span class="i-close"></span> 
+         <div style="clear: both;"></div>
+         <div class="sidebar-header">
+            <div class="avatar"> <img src="img/logo.jpg" class=" "> </div>
+            <span class="title fg-black">Filipino Alamat</span> <span class="subtitle fg-black"> 2018 © Copyright All Rights Reserved</span> 
+         </div>
+         <ul class="sidebar-menu">
+            <li id=""><a href="https://play.google.com/store/apps/developer?id=Pinoy+Hub"><span class="i-home"> More Apps</a></li> 
+            <li id=""><a href="https://play.google.com/store/apps/details?id=filipino.alamat"><span class="i-star_fill"> Rate Us</a></li> 
+            <li><a><span class="i-share" onclick="window.plugins.socialsharing.share('Free Filipino Alamat Book in your Pocket Available at Google Playstore', 'Filipino Alamat', null, 'https://play.google.com/store/apps/details?id=filipino.alamat')"> Share</a></li>
+         </ul>
+      </div>
+      <main class="main">
+      
+         <ul data-role="tabs" data-target="#main" data-tabs-color="#ffffff" data-font-color="#333333" id="nav-tabs" data-font-color="#333333" data-marker-color="#ffce3a" >
+            <li class="tab" data-target="offline">OFFLINE</li>
+            <li class="tab" data-target="online_tab" id="online">MORE</li>
+            <li class="tab" data-target="submit">SUBMIT</li>
+         </ul>
+         <div id="main">
+            <div id="offline">
+               <ul class="list"> </ul>
+               <div class="load-more"> <button class=" ">Load More</button> </div>
+            </div>
+            <div id="online_tab">
+               <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);margin-top: 50px;" data-role="progress" data-type="circle" data-size="32" data-radius="10" data-bar-color="st-yellow"></div>
+               <ul class="list with-second-label"> </ul>
+               <div id="online_pagination">
+                  <div id="pagination"> </div>
+                  <div style="clear: both;"></div>
+               </div>
+            </div>
+            <div id="submit">
+               <p> Submit your own alamat and let a thousand read! </p>
+               <form method="POST" action="" id="submitForm">
+                  <div class="form-group"> <label for="name">First & Last Name</label> <input type="text" id="name" name="name" class="form-input" > <label class="error" id="nameError"></label> </div>
+                  <div class="form-group"> <label for="title">Alamat Title</label> <input type="text" id="title" name="title" class="form-input" > <label class="error" id="titleError"></label> </div>
+                  <div class="form-group"> <label for="category">Alamat Category</label> <input type="text" id="category" name="category" class="form-input" > <label class="error" id="categoryError"></label> </div>
+                  <div class="form-group"> <label for="content">Content</label> <textarea name="content" id="content" class="form-input" rows="8" ></textarea> <label class="error" id="contentError"></label> </div>
+ 
+                  <div class="form-group"> <button type="button" name='submit' class="btn form-input submit-btn" value="Submit" id="submitAlamatButton"><span class="text">Submit</span> <div id="prog" style="margin: auto;display: none;" data-role="progress"
+        data-type="circle"
+        data-size="18"
+        data-radius="5"
+        data-bar-color="st-white"></div></button> </div>
+               </form>
+            </div>
+         </div>
+         <div id="single-page" class="hide">
+            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);margin-top: 50px; display: none;" data-role="progress" data-type="circle" data-size="32" data-radius="10" data-bar-color="st-yellow" ></div>
+            <div class="img-wrap fluid"></div>
+            <h1></h1>
+            <div class="content"> </div>
+         </div>
+      </main>
+      <div data-role="dialog" id="d1">
+         <div class="wrap">
+            <p class="green"> Submitted successfully and now pending for review </p>
+            <center> <button class="raised-button" id="d-close">OK</button> </center>
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script> <script src="js/core.min.js"></script> <script type="text/javascript" src='js/simplePagination.js'></script> <script type="text/javascript" src="js/index.js"></script> 
+   </body>
+</html>
